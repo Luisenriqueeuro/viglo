@@ -27,10 +27,10 @@
   var pasoS = document.getElementById('paso-safari');
   if (pasoS && ios && safari && !standalone) {
     pasoS.hidden = false;
-    var fl = document.getElementById('flecha'); if (fl) fl.hidden = false;
+    var fl = document.getElementById('flecha'), ft = document.getElementById('flecha-top'); if (fl) fl.hidden = false; if (ft) ft.hidden = false;
     var bs = document.getElementById('btn-compartir');
     if (bs) bs.addEventListener('click', function () {
-      if (fl) fl.hidden = true;
+      if (fl) fl.hidden = true; if (ft) ft.hidden = true;
       if (navigator.share) navigator.share({ title: 'ViGlo – Vida Global', url: location.origin + '/' }).catch(function () {});
     });
   }

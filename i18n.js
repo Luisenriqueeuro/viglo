@@ -31,11 +31,12 @@
       a_warn: "<b>Si Google muestra “aplicación no verificada”:</b> toca <b>Configuración avanzada</b> y luego <b>Ir a Vida Global</b>. Es normal la primera vez.",
       auto: "Las actualizaciones llegan solas: no tienes que volver a instalar.",
       i_title: "Instalar en iPhone", i_lead: "Debe hacerse desde <b>Safari</b> (no desde Chrome). Tarda menos de un minuto.",
-      i1: "Abre <b>vigloapp.com</b> en <b>Safari</b>.", i2: "Toca el botón <b>Compartir</b> (abajo al centro).", i3: "Desliza y elige <b>Agregar a pantalla de inicio</b>, luego toca <b>Agregar</b>.", i4: "Abre <b>Vida Global</b> desde el ícono nuevo e inicia sesión con tu cuenta de Google.",
-      i_tip: "Si no ves la opción, toca los tres puntos <b>···</b> junto a la barra de direcciones para que aparezca <b>Compartir</b>.",
+      i1: "Abre <b>vigloapp.com</b> en <b>Safari</b>.", i2: "Busca el botón <b>Compartir</b> (un cuadro con una flecha hacia arriba). Mira abajo los 3 casos: puede estar <b>abajo</b>, <b>arriba</b> o dentro del menú <b>···</b>.", i3: "Desliza y elige <b>Agregar a pantalla de inicio</b>, luego toca <b>Agregar</b>.", i4: "Abre <b>Vida Global</b> desde el ícono nuevo e inicia sesión con tu cuenta de Google.",
+      i_tip: "Si no ves Compartir, toca los tres puntos <b>···</b> o las tres rayas <b>≡</b> de la barra de Safari: ahí aparece <b>Compartir</b>.",
       m_title: "Manuales", m_lead: "Descarga la guía en tu idioma.", m_other: "Otros idiomas", m_pdf: "PDF", m_soon: "Manual de uso en español: próximamente.",
       sf_title: "Ábrelo en Safari para instalar", sf_text: "Estás en otro navegador. En iPhone la app solo se instala desde <b>Safari</b>. Toca el botón y continúa ahí.", sf_open: "Abrir en Safari", sf_copy: "Copiar enlace", sf_copied: "✅ Enlace copiado: pégalo en Safari", sf_help: "Si no se abre, copia el enlace, abre Safari y pégalo en la barra de direcciones.",
       ios_btn: "Toca aquí para abrir el menú Compartir", ios_next: "En el menú que se abre, desliza hacia abajo y toca <b>Agregar a pantalla de inicio</b>, luego <b>Agregar</b>.", ios_arrow: "Compartir",
+      d_title: "¿Dónde está el botón Compartir?", d_a: "Barra abajo", d_a_t: "Cuadro con flecha ⬆ en el centro de la barra de abajo.", d_b: "Barra arriba", d_b_t: "Cuadro con flecha ⬆ a la derecha de la barra de direcciones.", d_c: "En el menú", d_c_t: "Toca <b>···</b> o <b>≡</b> y elige <b>Compartir</b>.",
       v_title: "Videos de la app", see_manuals: "Ver manuales", see_videos: "Ver videos"
     },
     en: {
@@ -59,11 +60,12 @@
       a_warn: "<b>If Google shows “unverified app”:</b> tap <b>Advanced</b> and then <b>Go to Vida Global</b>. This is normal the first time.",
       auto: "Updates arrive automatically: you never need to reinstall.",
       i_title: "Install on iPhone", i_lead: "It must be done from <b>Safari</b> (not Chrome). It takes less than a minute.",
-      i1: "Open <b>vigloapp.com</b> in <b>Safari</b>.", i2: "Tap the <b>Share</b> button (bottom center).", i3: "Scroll and choose <b>Add to Home Screen</b>, then tap <b>Add</b>.", i4: "Open <b>Vida Global</b> from the new icon and sign in with your Google account.",
-      i_tip: "If you don't see the option, tap the three dots <b>···</b> next to the address bar so <b>Share</b> appears.",
+      i1: "Open <b>vigloapp.com</b> in <b>Safari</b>.", i2: "Look for the <b>Share</b> button (a square with an arrow pointing up). See the 3 cases below: it can be at the <b>bottom</b>, at the <b>top</b>, or inside the <b>···</b> menu.", i3: "Scroll and choose <b>Add to Home Screen</b>, then tap <b>Add</b>.", i4: "Open <b>Vida Global</b> from the new icon and sign in with your Google account.",
+      i_tip: "If you don't see Share, tap the three dots <b>···</b> or the three lines <b>≡</b> in Safari's bar: <b>Share</b> appears there.",
       m_title: "Manuals", m_lead: "Download the guide in your language.", m_other: "Other languages", m_pdf: "PDF", m_soon: "Spanish user manual: coming soon.",
       sf_title: "Open it in Safari to install", sf_text: "You are in another browser. On iPhone the app can only be installed from <b>Safari</b>. Tap the button and continue there.", sf_open: "Open in Safari", sf_copy: "Copy link", sf_copied: "✅ Link copied: paste it in Safari", sf_help: "If it does not open, copy the link, open Safari and paste it in the address bar.",
       ios_btn: "Tap here to open the Share menu", ios_next: "In the menu that opens, scroll down and tap <b>Add to Home Screen</b>, then <b>Add</b>.", ios_arrow: "Share",
+      d_title: "Where is the Share button?", d_a: "Bar at bottom", d_a_t: "Square with an arrow ⬆ in the center of the bottom bar.", d_b: "Bar at top", d_b_t: "Square with an arrow ⬆ to the right of the address bar.", d_c: "In the menu", d_c_t: "Tap <b>···</b> or <b>≡</b> and choose <b>Share</b>.",
       v_title: "App videos", see_manuals: "View manuals", see_videos: "Watch videos"
     },
     de: {
@@ -87,11 +89,12 @@
       a_warn: "<b>Wenn Google „nicht überprüfte App“ anzeigt:</b> tippe auf <b>Erweitert</b> und dann auf <b>Weiter zu Vida Global</b>. Das ist beim ersten Mal normal.",
       auto: "Updates kommen automatisch: Du musst nie neu installieren.",
       i_title: "Auf dem iPhone installieren", i_lead: "Das muss in <b>Safari</b> geschehen (nicht in Chrome). Dauert weniger als eine Minute.",
-      i1: "Öffne <b>vigloapp.com</b> in <b>Safari</b>.", i2: "Tippe auf die Schaltfläche <b>Teilen</b> (unten Mitte).", i3: "Scrolle und wähle <b>Zum Home-Bildschirm</b>, dann tippe auf <b>Hinzufügen</b>.", i4: "Öffne <b>Vida Global</b> über das neue Symbol und melde dich mit deinem Google-Konto an.",
-      i_tip: "Wenn du die Option nicht siehst, tippe auf die drei Punkte <b>···</b> neben der Adressleiste, damit <b>Teilen</b> erscheint.",
+      i1: "Öffne <b>vigloapp.com</b> in <b>Safari</b>.", i2: "Suche die Schaltfläche <b>Teilen</b> (ein Quadrat mit Pfeil nach oben). Sieh dir unten die 3 Fälle an: Sie kann <b>unten</b>, <b>oben</b> oder im Menü <b>···</b> sein.", i3: "Scrolle und wähle <b>Zum Home-Bildschirm</b>, dann tippe auf <b>Hinzufügen</b>.", i4: "Öffne <b>Vida Global</b> über das neue Symbol und melde dich mit deinem Google-Konto an.",
+      i_tip: "Wenn du Teilen nicht siehst, tippe in der Safari-Leiste auf die drei Punkte <b>···</b> oder die drei Striche <b>≡</b>: Dort erscheint <b>Teilen</b>.",
       m_title: "Anleitungen", m_lead: "Lade die Anleitung in deiner Sprache herunter.", m_other: "Andere Sprachen", m_pdf: "PDF", m_soon: "Spanisches Benutzerhandbuch: demnächst.",
       sf_title: "In Safari öffnen, um zu installieren", sf_text: "Du bist in einem anderen Browser. Auf dem iPhone lässt sich die App nur über <b>Safari</b> installieren. Tippe auf die Schaltfläche und mache dort weiter.", sf_open: "In Safari öffnen", sf_copy: "Link kopieren", sf_copied: "✅ Link kopiert: in Safari einfügen", sf_help: "Wenn es sich nicht öffnet, kopiere den Link, öffne Safari und füge ihn in die Adressleiste ein.",
       ios_btn: "Hier tippen, um das Teilen-Menü zu öffnen", ios_next: "Scrolle im geöffneten Menü nach unten und tippe auf <b>Zum Home-Bildschirm</b>, dann auf <b>Hinzufügen</b>.", ios_arrow: "Teilen",
+      d_title: "Wo ist die Schaltfläche Teilen?", d_a: "Leiste unten", d_a_t: "Quadrat mit Pfeil ⬆ in der Mitte der unteren Leiste.", d_b: "Leiste oben", d_b_t: "Quadrat mit Pfeil ⬆ rechts neben der Adressleiste.", d_c: "Im Menü", d_c_t: "Tippe auf <b>···</b> oder <b>≡</b> und wähle <b>Teilen</b>.",
       v_title: "App-Videos", see_manuals: "Anleitungen ansehen", see_videos: "Videos ansehen"
     }
   };
