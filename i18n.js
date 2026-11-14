@@ -34,6 +34,7 @@
       i1: "Abre <b>vigloapp.com</b> en <b>Safari</b>.", i2: "Toca el botón <b>Compartir</b> (abajo al centro).", i3: "Desliza y elige <b>Agregar a pantalla de inicio</b>, luego toca <b>Agregar</b>.", i4: "Abre <b>Vida Global</b> desde el ícono nuevo e inicia sesión con tu cuenta de Google.",
       i_tip: "Si no ves la opción, toca los tres puntos <b>···</b> junto a la barra de direcciones para que aparezca <b>Compartir</b>.",
       m_title: "Manuales", m_lead: "Descarga la guía en tu idioma.", m_other: "Otros idiomas", m_pdf: "PDF", m_soon: "Manual de uso en español: próximamente.",
+      sf_title: "Ábrelo en Safari para instalar", sf_text: "Estás en otro navegador. En iPhone la app solo se instala desde <b>Safari</b>. Toca el botón y continúa ahí.", sf_open: "Abrir en Safari", sf_copy: "Copiar enlace", sf_copied: "✅ Enlace copiado: pégalo en Safari", sf_help: "Si no se abre, copia el enlace, abre Safari y pégalo en la barra de direcciones.",
       v_title: "Videos de la app", see_manuals: "Ver manuales", see_videos: "Ver videos"
     },
     en: {
@@ -60,6 +61,7 @@
       i1: "Open <b>vigloapp.com</b> in <b>Safari</b>.", i2: "Tap the <b>Share</b> button (bottom center).", i3: "Scroll and choose <b>Add to Home Screen</b>, then tap <b>Add</b>.", i4: "Open <b>Vida Global</b> from the new icon and sign in with your Google account.",
       i_tip: "If you don't see the option, tap the three dots <b>···</b> next to the address bar so <b>Share</b> appears.",
       m_title: "Manuals", m_lead: "Download the guide in your language.", m_other: "Other languages", m_pdf: "PDF", m_soon: "Spanish user manual: coming soon.",
+      sf_title: "Open it in Safari to install", sf_text: "You are in another browser. On iPhone the app can only be installed from <b>Safari</b>. Tap the button and continue there.", sf_open: "Open in Safari", sf_copy: "Copy link", sf_copied: "✅ Link copied: paste it in Safari", sf_help: "If it does not open, copy the link, open Safari and paste it in the address bar.",
       v_title: "App videos", see_manuals: "View manuals", see_videos: "Watch videos"
     },
     de: {
@@ -86,6 +88,7 @@
       i1: "Öffne <b>vigloapp.com</b> in <b>Safari</b>.", i2: "Tippe auf die Schaltfläche <b>Teilen</b> (unten Mitte).", i3: "Scrolle und wähle <b>Zum Home-Bildschirm</b>, dann tippe auf <b>Hinzufügen</b>.", i4: "Öffne <b>Vida Global</b> über das neue Symbol und melde dich mit deinem Google-Konto an.",
       i_tip: "Wenn du die Option nicht siehst, tippe auf die drei Punkte <b>···</b> neben der Adressleiste, damit <b>Teilen</b> erscheint.",
       m_title: "Anleitungen", m_lead: "Lade die Anleitung in deiner Sprache herunter.", m_other: "Andere Sprachen", m_pdf: "PDF", m_soon: "Spanisches Benutzerhandbuch: demnächst.",
+      sf_title: "In Safari öffnen, um zu installieren", sf_text: "Du bist in einem anderen Browser. Auf dem iPhone lässt sich die App nur über <b>Safari</b> installieren. Tippe auf die Schaltfläche und mache dort weiter.", sf_open: "In Safari öffnen", sf_copy: "Link kopieren", sf_copied: "✅ Link kopiert: in Safari einfügen", sf_help: "Wenn es sich nicht öffnet, kopiere den Link, öffne Safari und füge ihn in die Adressleiste ein.",
       v_title: "App-Videos", see_manuals: "Anleitungen ansehen", see_videos: "Videos ansehen"
     }
   };
@@ -112,6 +115,7 @@
       }).join("");
     }
   }
+  window.VG_T = function (k) { return (T[cur] || T.es)[k]; };
   window.VG_SETLANG = function (l) { try { localStorage.setItem("vg_lang", l); } catch (e) {} apply(l); };
   var q = new URLSearchParams(location.search).get("lang"), saved = null;
   try { saved = localStorage.getItem("vg_lang"); } catch (e) {}

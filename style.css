@@ -65,3 +65,4 @@ p.lead{color:var(--suave);margin:0 0 16px}
 footer{margin:44px 0 0;padding:26px 0 30px;text-align:center;font-size:13.5px;color:#cfd9f3;background:#0b2a7a}
 footer a{color:#fff}
 footer img{height:44px;width:44px;border-radius:11px;margin-bottom:8px}
+.aviso{background:#fff8e6;border:2px solid var(--oro);border-radius:18px;padding:16px 18px;margin:18px 0;box-shadow:0 8px 22px rgba(246,179,59,.25)}.aviso[hidden]{display:none}.aviso>b{display:block;font-size:19px;color:var(--azul)}.aviso p{margin:6px 0}
