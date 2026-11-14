@@ -1,0 +1,131 @@
+(function () {
+  var VIDEOS = {
+    es: "https://drive.google.com/drive/folders/1Z1hAx2Fu4Up8zOUTuDLs0jpYYWu1CHkg",
+    en: "https://drive.google.com/drive/folders/1XVvuqUIaTQRZ-sgdGGnrHiPp7cIsYJqu",
+    de: "https://drive.google.com/drive/folders/1hH2i0S2NzmN4zWEbL5zU6-8MweHu4ac_"
+  };
+  var MANUALS = {
+    es: [["Manual de instalación", "manuales/instalacion-es.pdf"]],
+    en: [["Installation manual", "manuales/installation-en.pdf"], ["User manual", "manuales/user-manual-en.pdf"]],
+    de: [["Installationsanleitung", "manuales/installation-de.pdf"], ["Bedienungsanleitung", "manuales/bedienung-de.pdf"]]
+  };
+  var T = {
+    es: {
+      tagline: "Del Hogar, al Negocio y el Mundo",
+      intro: "Tu vida organizada en un solo lugar: dinero, salud, tareas, documentos y familia. Tus datos viven en tu propio Google Drive.",
+      trial: "21 días de prueba gratis", priv: "Datos en tu Drive", multi: "Español · English · Deutsch",
+      op_android: "Instalar en Android", op_android_d: "Un toque y queda como app",
+      op_iphone: "Instalar en iPhone", op_iphone_d: "Desde Safari, en 3 pasos",
+      op_videos: "Ver videos de la app", op_videos_d: "Promocional, instalación y uso",
+      op_manuals: "Manuales", op_manuals_d: "Guías en PDF para descargar",
+      see_title: "Así se ve", see_lead: "Pantallas de ejemplo con datos ficticios. Desliza para ver más.",
+      c_gastos: "Gastos con foto", c_medicamentos: "Medicamentos", c_tareas: "Tareas y citas", c_archivos: "Mis archivos", c_casa: "Casa y auto", c_emergencias: "Emergencias", c_salud: "Salud familiar", c_reportes: "Reportes para imprimir",
+      start_title: "Para empezar",
+      s1: "<b>Instala la app</b> en tu teléfono con la guía de Android o iPhone.",
+      s2: "<b>Ábrela desde su ícono</b> e inicia sesión con tu cuenta de Google (solo la primera vez).",
+      s3: "<b>Prueba gratis 21 días.</b> Empieza por Gastos, Tareas o Mis archivos.",
+      have: "¿Ya la tienes?", open: "Abrir Vida Global",
+      home: "‹ Inicio", foot: "Tus datos se guardan en tu propio Google Drive.",
+      a_title: "Instalar en Android", a_lead: "Usa Chrome. Tarda menos de un minuto.", a_btn: "📲 Instalar Vida Global ahora", a_done: "✅ ¡Listo! Busca el ícono de <b>Vida Global</b> en tu pantalla de inicio.",
+      a1: "Abre <b>vigloapp.com</b> en <b>Chrome</b>.", a2: "Toca el menú <b>⋮</b> (arriba a la derecha).", a3: "Elige <b>Instalar app</b> o <b>Agregar a la pantalla principal</b>, y confirma con <b>Instalar</b>.", a4: "Abre <b>Vida Global</b> desde el ícono nuevo e inicia sesión con tu cuenta de Google.",
+      a_warn: "<b>Si Google muestra “aplicación no verificada”:</b> toca <b>Configuración avanzada</b> y luego <b>Ir a Vida Global</b>. Es normal la primera vez.",
+      auto: "Las actualizaciones llegan solas: no tienes que volver a instalar.",
+      i_title: "Instalar en iPhone", i_lead: "Debe hacerse desde <b>Safari</b> (no desde Chrome). Tarda menos de un minuto.",
+      i1: "Abre <b>vigloapp.com</b> en <b>Safari</b>.", i2: "Toca el botón <b>Compartir</b> (abajo al centro).", i3: "Desliza y elige <b>Agregar a pantalla de inicio</b>, luego toca <b>Agregar</b>.", i4: "Abre <b>Vida Global</b> desde el ícono nuevo e inicia sesión con tu cuenta de Google.",
+      i_tip: "Si no ves la opción, toca los tres puntos <b>···</b> junto a la barra de direcciones para que aparezca <b>Compartir</b>.",
+      m_title: "Manuales", m_lead: "Descarga la guía en tu idioma.", m_other: "Otros idiomas", m_pdf: "PDF", m_soon: "Manual de uso en español: próximamente.",
+      v_title: "Videos de la app", see_manuals: "Ver manuales", see_videos: "Ver videos"
+    },
+    en: {
+      tagline: "From Home, to Business and the World",
+      intro: "Your life organized in one place: money, health, tasks, documents and family. Your data lives in your own Google Drive.",
+      trial: "21-day free trial", priv: "Data in your Drive", multi: "Español · English · Deutsch",
+      op_android: "Install on Android", op_android_d: "One tap and it becomes an app",
+      op_iphone: "Install on iPhone", op_iphone_d: "From Safari, in 3 steps",
+      op_videos: "Watch the app videos", op_videos_d: "Promo, installation and usage",
+      op_manuals: "Manuals", op_manuals_d: "PDF guides to download",
+      see_title: "See it in action", see_lead: "Sample screens with fictional data. Swipe to see more.",
+      c_gastos: "Expenses with photo", c_medicamentos: "Medications", c_tareas: "Tasks and appointments", c_archivos: "My files", c_casa: "Home and car", c_emergencias: "Emergencies", c_salud: "Family health", c_reportes: "Printable reports",
+      start_title: "Getting started",
+      s1: "<b>Install the app</b> on your phone with the Android or iPhone guide.",
+      s2: "<b>Open it from its icon</b> and sign in with your Google account (first time only).",
+      s3: "<b>Try it free for 21 days.</b> Start with Expenses, Tasks or My files.",
+      have: "Already have it?", open: "Open Vida Global",
+      home: "‹ Home", foot: "Your data is stored in your own Google Drive.",
+      a_title: "Install on Android", a_lead: "Use Chrome. It takes less than a minute.", a_btn: "📲 Install Vida Global now", a_done: "✅ Done! Look for the <b>Vida Global</b> icon on your home screen.",
+      a1: "Open <b>vigloapp.com</b> in <b>Chrome</b>.", a2: "Tap the <b>⋮</b> menu (top right).", a3: "Choose <b>Install app</b> or <b>Add to Home screen</b>, then confirm with <b>Install</b>.", a4: "Open <b>Vida Global</b> from the new icon and sign in with your Google account.",
+      a_warn: "<b>If Google shows “unverified app”:</b> tap <b>Advanced</b> and then <b>Go to Vida Global</b>. This is normal the first time.",
+      auto: "Updates arrive automatically: you never need to reinstall.",
+      i_title: "Install on iPhone", i_lead: "It must be done from <b>Safari</b> (not Chrome). It takes less than a minute.",
+      i1: "Open <b>vigloapp.com</b> in <b>Safari</b>.", i2: "Tap the <b>Share</b> button (bottom center).", i3: "Scroll and choose <b>Add to Home Screen</b>, then tap <b>Add</b>.", i4: "Open <b>Vida Global</b> from the new icon and sign in with your Google account.",
+      i_tip: "If you don't see the option, tap the three dots <b>···</b> next to the address bar so <b>Share</b> appears.",
+      m_title: "Manuals", m_lead: "Download the guide in your language.", m_other: "Other languages", m_pdf: "PDF", m_soon: "Spanish user manual: coming soon.",
+      v_title: "App videos", see_manuals: "View manuals", see_videos: "Watch videos"
+    },
+    de: {
+      tagline: "Von Zuhause über das Geschäft in die Welt",
+      intro: "Dein Leben an einem Ort organisiert: Geld, Gesundheit, Aufgaben, Dokumente und Familie. Deine Daten liegen in deinem eigenen Google Drive.",
+      trial: "21 Tage kostenlos testen", priv: "Daten in deinem Drive", multi: "Español · English · Deutsch",
+      op_android: "Auf Android installieren", op_android_d: "Ein Tipp, und sie wird zur App",
+      op_iphone: "Auf dem iPhone installieren", op_iphone_d: "Über Safari, in 3 Schritten",
+      op_videos: "App-Videos ansehen", op_videos_d: "Werbung, Installation und Nutzung",
+      op_manuals: "Anleitungen", op_manuals_d: "PDF-Anleitungen zum Herunterladen",
+      see_title: "So sieht es aus", see_lead: "Beispielbildschirme mit fiktiven Daten. Wische für mehr.",
+      c_gastos: "Ausgaben mit Foto", c_medicamentos: "Medikamente", c_tareas: "Aufgaben und Termine", c_archivos: "Meine Dateien", c_casa: "Haus und Auto", c_emergencias: "Notfälle", c_salud: "Familiengesundheit", c_reportes: "Druckbare Berichte",
+      start_title: "Erste Schritte",
+      s1: "<b>Installiere die App</b> auf deinem Handy mit der Android- oder iPhone-Anleitung.",
+      s2: "<b>Öffne sie über ihr Symbol</b> und melde dich mit deinem Google-Konto an (nur beim ersten Mal).",
+      s3: "<b>21 Tage kostenlos testen.</b> Beginne mit Ausgaben, Aufgaben oder Meine Dateien.",
+      have: "Schon installiert?", open: "Vida Global öffnen",
+      home: "‹ Start", foot: "Deine Daten werden in deinem eigenen Google Drive gespeichert.",
+      a_title: "Auf Android installieren", a_lead: "Verwende Chrome. Dauert weniger als eine Minute.", a_btn: "📲 Vida Global jetzt installieren", a_done: "✅ Fertig! Suche das <b>Vida Global</b>-Symbol auf deinem Startbildschirm.",
+      a1: "Öffne <b>vigloapp.com</b> in <b>Chrome</b>.", a2: "Tippe auf das Menü <b>⋮</b> (oben rechts).", a3: "Wähle <b>App installieren</b> oder <b>Zum Startbildschirm hinzufügen</b> und bestätige mit <b>Installieren</b>.", a4: "Öffne <b>Vida Global</b> über das neue Symbol und melde dich mit deinem Google-Konto an.",
+      a_warn: "<b>Wenn Google „nicht überprüfte App“ anzeigt:</b> tippe auf <b>Erweitert</b> und dann auf <b>Weiter zu Vida Global</b>. Das ist beim ersten Mal normal.",
+      auto: "Updates kommen automatisch: Du musst nie neu installieren.",
+      i_title: "Auf dem iPhone installieren", i_lead: "Das muss in <b>Safari</b> geschehen (nicht in Chrome). Dauert weniger als eine Minute.",
+      i1: "Öffne <b>vigloapp.com</b> in <b>Safari</b>.", i2: "Tippe auf die Schaltfläche <b>Teilen</b> (unten Mitte).", i3: "Scrolle und wähle <b>Zum Home-Bildschirm</b>, dann tippe auf <b>Hinzufügen</b>.", i4: "Öffne <b>Vida Global</b> über das neue Symbol und melde dich mit deinem Google-Konto an.",
+      i_tip: "Wenn du die Option nicht siehst, tippe auf die drei Punkte <b>···</b> neben der Adressleiste, damit <b>Teilen</b> erscheint.",
+      m_title: "Anleitungen", m_lead: "Lade die Anleitung in deiner Sprache herunter.", m_other: "Andere Sprachen", m_pdf: "PDF", m_soon: "Spanisches Benutzerhandbuch: demnächst.",
+      v_title: "App-Videos", see_manuals: "Anleitungen ansehen", see_videos: "Videos ansehen"
+    }
+  };
+  var NAMES = { es: "Español", en: "English", de: "Deutsch" };
+  var ES = "AR BO CL CO CR CU DO EC ES GT GQ HN MX NI PA PE PR PY SV UY VE".split(" ");
+  var DE = "DE AT CH LI".split(" ");
+  function byCountry(cc) { cc = (cc || "").toUpperCase(); return DE.indexOf(cc) > -1 ? "de" : ES.indexOf(cc) > -1 ? "es" : "en"; }
+  function byBrowser() { var l = (navigator.language || "es").toLowerCase(); return l.indexOf("de") === 0 ? "de" : l.indexOf("es") === 0 ? "es" : l.indexOf("en") === 0 ? "en" : "es"; }
+  var cur = "es";
+  function apply(l) {
+    cur = T[l] ? l : "es"; var d = T[cur];
+    document.documentElement.lang = cur;
+    document.querySelectorAll("[data-t]").forEach(function (e) { var v = d[e.getAttribute("data-t")]; if (v != null) e.innerHTML = v; });
+    document.querySelectorAll("[data-video]").forEach(function (a) { a.href = VIDEOS[cur]; });
+    document.querySelectorAll(".lang button").forEach(function (b) { b.classList.toggle("on", b.dataset.l === cur); });
+    var box = document.getElementById("lista-manuales");
+    if (box) {
+      var order = [cur].concat(["es", "en", "de"].filter(function (x) { return x !== cur; }));
+      box.innerHTML = order.map(function (l2, i) {
+        var h = i === 1 ? '<h2>' + d.m_other + '</h2>' : "";
+        var items = MANUALS[l2].map(function (m) { return '<a class="manual" href="' + m[1] + '"><div class="pdf">PDF</div><div><b>' + m[0] + '</b><span>' + NAMES[l2] + '</span></div></a>'; }).join("");
+        var soon = l2 === "es" && d.m_soon ? '<p class="nota">' + d.m_soon + '</p>' : "";
+        return h + items + soon;
+      }).join("");
+    }
+  }
+  window.VG_SETLANG = function (l) { try { localStorage.setItem("vg_lang", l); } catch (e) {} apply(l); };
+  var q = new URLSearchParams(location.search).get("lang"), saved = null;
+  try { saved = localStorage.getItem("vg_lang"); } catch (e) {}
+  var first = (q && T[q]) ? q : (saved && T[saved]) ? saved : null;
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".lang button").forEach(function (b) { b.addEventListener("click", function () { VG_SETLANG(b.dataset.l); }); });
+    if (first) { apply(first); return; }
+    apply(byBrowser());
+    // Sin elección previa: idioma según el país de la IP (si responde rápido)
+    var done = false, ctl = window.AbortController ? new AbortController() : null;
+    var t = setTimeout(function () { if (ctl) ctl.abort(); }, 3500);
+    fetch("https://ipwho.is/?fields=success,country_code", ctl ? { signal: ctl.signal } : {}).then(function (r) { return r.json(); }).then(function (j) {
+      clearTimeout(t);
+      if (j && j.success && !done) { done = true; var l = byCountry(j.country_code); try { sessionStorage.setItem("vg_ip", l); } catch (e) {} var sv = null; try { sv = localStorage.getItem("vg_lang"); } catch (e) {} if (!sv) apply(l); }
+    }).catch(function () {});
+  });
+})();
