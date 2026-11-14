@@ -3,9 +3,18 @@
   var q = new URLSearchParams(location.search);
   var standalone = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
   // App instalada (o abierta desde su ícono): entra directo a Vida Global.
-  if ((standalone || q.get('app') === '1') && c.APP_URL) { location.replace(c.APP_URL); return; }
+  // Comisionista: liga personal <celular>.vigloapp.com -> ?ref=<celular>; se recuerda en este navegador/app
+  var ref = '';
+  try {
+    var r0 = (q.get('ref') || '').replace(/\D/g, '');
+    if (r0.length >= 10 && r0.length <= 15) localStorage.setItem('vg_ref', r0);
+    ref = localStorage.getItem('vg_ref') || '';
+  } catch (e) { var r1 = (q.get('ref') || '').replace(/\D/g, ''); if (r1.length >= 10 && r1.length <= 15) ref = r1; }
+  var appUrl = c.APP_URL ? c.APP_URL + (ref ? (c.APP_URL.indexOf('?') < 0 ? '?' : '&') + 'ref=' + ref : '') : '';
+  var rb = document.getElementById('ref-banner'); if (rb && ref) rb.hidden = false;
+  if ((standalone || q.get('app') === '1') && appUrl) { location.replace(appUrl); return; }
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function () {});
-  document.querySelectorAll('[data-app-link]').forEach(function (a) { if (c.APP_URL) a.href = c.APP_URL; });
+  document.querySelectorAll('[data-app-link]').forEach(function (a) { if (c.APP_URL) a.href = appUrl; });
   // iPhone/iPad fuera de Safari (Chrome, Firefox, Facebook...): ofrecer abrir en Safari con un toque
   var ua = navigator.userAgent || '';
   var ios = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
