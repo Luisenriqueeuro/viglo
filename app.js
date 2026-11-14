@@ -23,6 +23,17 @@
       else prompt('', destino);
     });
   }
+  // iPhone en Safari: un toque abre el menú Compartir y una flecha señala el botón
+  var pasoS = document.getElementById('paso-safari');
+  if (pasoS && ios && safari && !standalone) {
+    pasoS.hidden = false;
+    var fl = document.getElementById('flecha'); if (fl) fl.hidden = false;
+    var bs = document.getElementById('btn-compartir');
+    if (bs) bs.addEventListener('click', function () {
+      if (fl) fl.hidden = true;
+      if (navigator.share) navigator.share({ title: 'ViGlo – Vida Global', url: location.origin + '/' }).catch(function () {});
+    });
+  }
   // Botón "Instalar ahora" (Android / Chrome)
   var deferred = null;
   var btn = document.getElementById('btn-instalar');

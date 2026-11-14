@@ -1,5 +1,5 @@
 // Service worker de Vida Global: guarda solo el "cascarón". La app real siempre viene de Apps Script.
-const V = 'vg-pwa-v4';
+const V = 'vg-pwa-v5';
 const SHELL = ['./', 'index.html', 'android.html', 'iphone.html', 'manuales.html', 'style.css', 'app.js', 'i18n.js', 'config.js', 'manifest.json', 'icon-192.png', 'icon-512.png', 'img/logo-horizontal.webp'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => c.addAll(SHELL)).catch(() => {})); self.skipWaiting(); });
 self.addEventListener('activate', e => {

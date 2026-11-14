@@ -35,6 +35,7 @@
       i_tip: "Si no ves la opción, toca los tres puntos <b>···</b> junto a la barra de direcciones para que aparezca <b>Compartir</b>.",
       m_title: "Manuales", m_lead: "Descarga la guía en tu idioma.", m_other: "Otros idiomas", m_pdf: "PDF", m_soon: "Manual de uso en español: próximamente.",
       sf_title: "Ábrelo en Safari para instalar", sf_text: "Estás en otro navegador. En iPhone la app solo se instala desde <b>Safari</b>. Toca el botón y continúa ahí.", sf_open: "Abrir en Safari", sf_copy: "Copiar enlace", sf_copied: "✅ Enlace copiado: pégalo en Safari", sf_help: "Si no se abre, copia el enlace, abre Safari y pégalo en la barra de direcciones.",
+      ios_btn: "Toca aquí para abrir el menú Compartir", ios_next: "En el menú que se abre, desliza hacia abajo y toca <b>Agregar a pantalla de inicio</b>, luego <b>Agregar</b>.", ios_arrow: "Compartir",
       v_title: "Videos de la app", see_manuals: "Ver manuales", see_videos: "Ver videos"
     },
     en: {
@@ -62,6 +63,7 @@
       i_tip: "If you don't see the option, tap the three dots <b>···</b> next to the address bar so <b>Share</b> appears.",
       m_title: "Manuals", m_lead: "Download the guide in your language.", m_other: "Other languages", m_pdf: "PDF", m_soon: "Spanish user manual: coming soon.",
       sf_title: "Open it in Safari to install", sf_text: "You are in another browser. On iPhone the app can only be installed from <b>Safari</b>. Tap the button and continue there.", sf_open: "Open in Safari", sf_copy: "Copy link", sf_copied: "✅ Link copied: paste it in Safari", sf_help: "If it does not open, copy the link, open Safari and paste it in the address bar.",
+      ios_btn: "Tap here to open the Share menu", ios_next: "In the menu that opens, scroll down and tap <b>Add to Home Screen</b>, then <b>Add</b>.", ios_arrow: "Share",
       v_title: "App videos", see_manuals: "View manuals", see_videos: "Watch videos"
     },
     de: {
@@ -89,6 +91,7 @@
       i_tip: "Wenn du die Option nicht siehst, tippe auf die drei Punkte <b>···</b> neben der Adressleiste, damit <b>Teilen</b> erscheint.",
       m_title: "Anleitungen", m_lead: "Lade die Anleitung in deiner Sprache herunter.", m_other: "Andere Sprachen", m_pdf: "PDF", m_soon: "Spanisches Benutzerhandbuch: demnächst.",
       sf_title: "In Safari öffnen, um zu installieren", sf_text: "Du bist in einem anderen Browser. Auf dem iPhone lässt sich die App nur über <b>Safari</b> installieren. Tippe auf die Schaltfläche und mache dort weiter.", sf_open: "In Safari öffnen", sf_copy: "Link kopieren", sf_copied: "✅ Link kopiert: in Safari einfügen", sf_help: "Wenn es sich nicht öffnet, kopiere den Link, öffne Safari und füge ihn in die Adressleiste ein.",
+      ios_btn: "Hier tippen, um das Teilen-Menü zu öffnen", ios_next: "Scrolle im geöffneten Menü nach unten und tippe auf <b>Zum Home-Bildschirm</b>, dann auf <b>Hinzufügen</b>.", ios_arrow: "Teilen",
       v_title: "App-Videos", see_manuals: "Anleitungen ansehen", see_videos: "Videos ansehen"
     }
   };
