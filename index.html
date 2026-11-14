@@ -1,55 +1,34 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Vida Global</title>
-<meta name="theme-color" content="#0b308f">
-<meta name="description" content="Del Hogar, al Negocio y el Mundo">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-512.png">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Vida Global">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<style>
-  html,body{margin:0;height:100%;background:#fff;font-family:Arial,Helvetica,sans-serif;color:#0b308f}
-  #splash{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:24px}
-  #splash img{width:min(60vw,260px);height:auto}
-  #splash p{margin:0;font-size:16px}
-  #splash a{display:inline-block;margin-top:6px;padding:12px 22px;border-radius:12px;background:#0b308f;color:#fff;text-decoration:none;font-weight:bold;visibility:hidden}
-  iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#fff}
-</style>
-</head>
-<body>
-<div id="splash">
-  <img src="icon-512.png" alt="Vida Global">
-  <p id="msg">Abriendo Vida Global…</p>
-  <a id="btn" href="#">Abrir la app</a>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b308f"><link rel="manifest" href="manifest.json"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="stylesheet" href="style.css"><title>ViGlo – Vida Global</title><meta name="description" content="Vida Global: gastos, salud, tareas, documentos y familia en un solo lugar. Instala la app en Android o iPhone."></head><body>
+<div class="wrap">
+<section class="hero">
+<img class="logo" src="img/logo-horizontal.webp" alt="ViGlo – Vida Global. Del Hogar, al Negocio y el Mundo">
+<p class="sub">Tu vida organizada en un solo lugar: dinero, salud, tareas, documentos y familia. Tus datos viven en tu propio Google Drive.</p>
+</section>
+<nav class="opciones">
+<a class="op" href="android.html"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div><div><b>Instalar en Android</b><span class="d">Un toque y queda como app</span></div><div class="fl">›</div></a>
+<a class="op" href="iphone.html"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="3"/><path d="M10.5 5h3"/></svg></div><div><b>Instalar en iPhone</b><span class="d">Desde Safari, en 3 pasos</span></div><div class="fl">›</div></a>
+<a class="op" href="manuales.html"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 21.5V5.5"/><path d="M9 8h7"/></svg></div><div><b>Manuales</b><span class="d">Guías en español, English y Deutsch</span></div><div class="fl">›</div></a>
+</nav>
+<h2>Así se ve</h2>
+<p class="lead">Pantallas de ejemplo con datos ficticios. Desliza para ver más.</p>
 </div>
-<script src="config.js"></script>
-<script>
-(function () {
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function () {});
-  var c = window.VG_CONFIG || {};
-  var q = new URLSearchParams(location.search);
-  var modo = q.get('modo') || c.MODE || 'directo';
-  var url = c.APP_URL;
-  var btn = document.getElementById('btn');
-  if (!url) { document.getElementById('msg').textContent = 'Falta la liga de la app (config.js).'; return; }
-  btn.href = url;
-  function directo() { location.replace(url); }
-  if (modo === 'iframe') {
-    var f = document.createElement('iframe');
-    f.src = url;
-    f.allow = 'camera; microphone; clipboard-read; clipboard-write; geolocation; fullscreen';
-    document.body.appendChild(f);
-  } else {
-    setTimeout(function () { btn.style.visibility = 'visible'; }, 4000);
-    directo();
-  }
-})();
-</script>
-</body>
-</html>
+<div class="wrap"><div class="galeria">
+<figure><img src="img/pantalla-gastos.jpg" alt="Gastos" loading="lazy"><figcaption>Gastos con foto</figcaption></figure>
+<figure><img src="img/pantalla-medicamentos.jpg" alt="Medicamentos" loading="lazy"><figcaption>Medicamentos</figcaption></figure>
+<figure><img src="img/pantalla-tareas.jpg" alt="Tareas" loading="lazy"><figcaption>Tareas y citas</figcaption></figure>
+<figure><img src="img/pantalla-archivos.jpg" alt="Mis archivos" loading="lazy"><figcaption>Mis archivos</figcaption></figure>
+<figure><img src="img/pantalla-casa-auto.jpg" alt="Casa y auto" loading="lazy"><figcaption>Casa y auto</figcaption></figure>
+<figure><img src="img/pantalla-emergencias.jpg" alt="Emergencias" loading="lazy"><figcaption>Emergencias</figcaption></figure>
+<figure><img src="img/pantalla-salud.jpg" alt="Salud familiar" loading="lazy"><figcaption>Salud familiar</figcaption></figure>
+<figure><img src="img/pantalla-reportes.jpg" alt="Reportes" loading="lazy"><figcaption>Reportes para imprimir</figcaption></figure>
+</div></div>
+<div class="wrap">
+<h2>Para empezar</h2>
+<ol class="pasos">
+<li><b>Instala la app</b> en tu teléfono con la guía de Android o iPhone.</li>
+<li><b>Ábrela desde su ícono</b> e inicia sesión con tu cuenta de Google (solo la primera vez).</li>
+<li><b>Prueba gratis 21 días.</b> Empieza por Gastos, Tareas o Mis archivos.</li>
+</ol>
+<p class="abrir">¿Ya la tienes? <a data-app-link href="#">Abrir Vida Global</a></p>
+<footer>ViGlo · Vida Global · <a href="mailto:info@vigloapp.com">info@vigloapp.com</a><br>Tus datos se guardan en tu propio Google Drive.</footer>
+</div><script src="config.js"></script><script src="app.js"></script></body></html>
