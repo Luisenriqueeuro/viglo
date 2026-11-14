@@ -23,7 +23,7 @@
       start_title: "Para empezar",
       s1: "<b>Instala la app</b> en tu teléfono con la guía de Android o iPhone.",
       s2: "<b>Ábrela desde su ícono</b> e inicia sesión con tu cuenta de Google (solo la primera vez).",
-      s3: "<b>Prueba gratis 21 días.</b> Empieza por Gastos, Tareas o Mis archivos.",
+      s3: "<b>Prueba gratis 21 días con todas las funciones abiertas.</b> Te recomendamos empezar por Gastos, Tareas y Mis archivos.",
       have: "¿Ya la tienes?", open: "Abrir Vida Global",
       home: "‹ Inicio", foot: "Tus datos se guardan en tu propio Google Drive.",
       a_title: "Instalar en Android", a_lead: "Usa Chrome. Tarda menos de un minuto.", a_btn: "📲 Instalar Vida Global ahora", a_done: "✅ ¡Listo! Busca el ícono de <b>Vida Global</b> en tu pantalla de inicio.",
@@ -37,6 +37,7 @@
       sf_title: "Ábrelo en Safari para instalar", sf_text: "Estás en otro navegador. En iPhone la app solo se instala desde <b>Safari</b>. Toca el botón y continúa ahí.", sf_open: "Abrir en Safari", sf_copy: "Copiar enlace", sf_copied: "✅ Enlace copiado: pégalo en Safari", sf_help: "Si no se abre, copia el enlace, abre Safari y pégalo en la barra de direcciones.",
       ios_btn: "Toca aquí para abrir el menú Compartir", ios_next: "En el menú que se abre, desliza hacia abajo y toca <b>Agregar a pantalla de inicio</b>, luego <b>Agregar</b>.", ios_arrow: "Compartir",
       d_title: "¿Dónde está el botón Compartir?", d_a: "Barra abajo", d_a_t: "Cuadro con flecha ⬆ en el centro de la barra de abajo.", d_b: "Barra arriba", d_b_t: "Cuadro con flecha ⬆ a la derecha de la barra de direcciones.", d_c: "En el menú", d_c_t: "Toca <b>···</b> o <b>≡</b> y elige <b>Compartir</b>.",
+      qr_title: "Instálala también en otro teléfono", qr_text: "Escanea este código con la cámara de otro teléfono: abre esta página para instalar la app.",
       v_title: "Videos de la app", see_manuals: "Ver manuales", see_videos: "Ver videos"
     },
     en: {
@@ -52,7 +53,7 @@
       start_title: "Getting started",
       s1: "<b>Install the app</b> on your phone with the Android or iPhone guide.",
       s2: "<b>Open it from its icon</b> and sign in with your Google account (first time only).",
-      s3: "<b>Try it free for 21 days.</b> Start with Expenses, Tasks or My files.",
+      s3: "<b>Try it free for 21 days with every feature unlocked.</b> We recommend starting with Expenses, Tasks and My files.",
       have: "Already have it?", open: "Open Vida Global",
       home: "‹ Home", foot: "Your data is stored in your own Google Drive.",
       a_title: "Install on Android", a_lead: "Use Chrome. It takes less than a minute.", a_btn: "📲 Install Vida Global now", a_done: "✅ Done! Look for the <b>Vida Global</b> icon on your home screen.",
@@ -66,6 +67,7 @@
       sf_title: "Open it in Safari to install", sf_text: "You are in another browser. On iPhone the app can only be installed from <b>Safari</b>. Tap the button and continue there.", sf_open: "Open in Safari", sf_copy: "Copy link", sf_copied: "✅ Link copied: paste it in Safari", sf_help: "If it does not open, copy the link, open Safari and paste it in the address bar.",
       ios_btn: "Tap here to open the Share menu", ios_next: "In the menu that opens, scroll down and tap <b>Add to Home Screen</b>, then <b>Add</b>.", ios_arrow: "Share",
       d_title: "Where is the Share button?", d_a: "Bar at bottom", d_a_t: "Square with an arrow ⬆ in the center of the bottom bar.", d_b: "Bar at top", d_b_t: "Square with an arrow ⬆ to the right of the address bar.", d_c: "In the menu", d_c_t: "Tap <b>···</b> or <b>≡</b> and choose <b>Share</b>.",
+      qr_title: "Install it on another phone too", qr_text: "Scan this code with another phone's camera: it opens this page so you can install the app.",
       v_title: "App videos", see_manuals: "View manuals", see_videos: "Watch videos"
     },
     de: {
@@ -81,7 +83,7 @@
       start_title: "Erste Schritte",
       s1: "<b>Installiere die App</b> auf deinem Handy mit der Android- oder iPhone-Anleitung.",
       s2: "<b>Öffne sie über ihr Symbol</b> und melde dich mit deinem Google-Konto an (nur beim ersten Mal).",
-      s3: "<b>21 Tage kostenlos testen.</b> Beginne mit Ausgaben, Aufgaben oder Meine Dateien.",
+      s3: "<b>21 Tage kostenlos testen, alle Funktionen sind freigeschaltet.</b> Wir empfehlen, mit Ausgaben, Aufgaben und Meine Dateien zu beginnen.",
       have: "Schon installiert?", open: "Vida Global öffnen",
       home: "‹ Start", foot: "Deine Daten werden in deinem eigenen Google Drive gespeichert.",
       a_title: "Auf Android installieren", a_lead: "Verwende Chrome. Dauert weniger als eine Minute.", a_btn: "📲 Vida Global jetzt installieren", a_done: "✅ Fertig! Suche das <b>Vida Global</b>-Symbol auf deinem Startbildschirm.",
@@ -95,6 +97,7 @@
       sf_title: "In Safari öffnen, um zu installieren", sf_text: "Du bist in einem anderen Browser. Auf dem iPhone lässt sich die App nur über <b>Safari</b> installieren. Tippe auf die Schaltfläche und mache dort weiter.", sf_open: "In Safari öffnen", sf_copy: "Link kopieren", sf_copied: "✅ Link kopiert: in Safari einfügen", sf_help: "Wenn es sich nicht öffnet, kopiere den Link, öffne Safari und füge ihn in die Adressleiste ein.",
       ios_btn: "Hier tippen, um das Teilen-Menü zu öffnen", ios_next: "Scrolle im geöffneten Menü nach unten und tippe auf <b>Zum Home-Bildschirm</b>, dann auf <b>Hinzufügen</b>.", ios_arrow: "Teilen",
       d_title: "Wo ist die Schaltfläche Teilen?", d_a: "Leiste unten", d_a_t: "Quadrat mit Pfeil ⬆ in der Mitte der unteren Leiste.", d_b: "Leiste oben", d_b_t: "Quadrat mit Pfeil ⬆ rechts neben der Adressleiste.", d_c: "Im Menü", d_c_t: "Tippe auf <b>···</b> oder <b>≡</b> und wähle <b>Teilen</b>.",
+      qr_title: "Auch auf einem anderen Handy installieren", qr_text: "Scanne diesen Code mit der Kamera eines anderen Handys: Er öffnet diese Seite, um die App zu installieren.",
       v_title: "App-Videos", see_manuals: "Anleitungen ansehen", see_videos: "Videos ansehen"
     }
   };
