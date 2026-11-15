@@ -57,10 +57,34 @@
 </div>
 <p style="margin-top:12px"><a href="plantilla-emprendedor.html">Ver una página de ejemplo →</a> · <a href="https://drive.google.com/file/d/1k5di3OISh4gn_g9JzTQiH5UszU5nKfeo/view" target="_blank" rel="noopener">Descargar folleto y lista de lo que debes entregar (PDF)</a></p></section>
 
+<section class="sec" id="dominio"><h2>Revisa tu dominio</h2><p class="lead">Escribe el nombre que quieres para tu página y checa si está disponible. Tu paquete cubre hasta $200 MXN del primer año; si cuesta más, pagarías la diferencia.</p>
+<div class="dom"><div class="dr"><input id="dn" type="text" inputmode="url" autocapitalize="off" autocomplete="off" placeholder="tunombre" aria-label="Nombre del dominio"><select id="dt" aria-label="Terminación"><option value="com">.com</option><option value="net">.net</option><option value="org">.org</option><option value="online">.online</option><option value="site">.site</option><option value="store">.store</option><option value="app">.app</option><option value="dev">.dev</option><option value="info">.info</option><option value="biz">.biz</option><option value="xyz">.xyz</option><option value="pro">.pro</option></select><button id="db" class="btn" type="button">Revisar</button></div>
+<div id="dres" aria-live="polite"></div></div>
+<style>.dom{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:16px;margin-top:12px;box-shadow:0 8px 22px rgba(11,48,143,.08)}.dr{display:flex;gap:8px;flex-wrap:wrap}.dr input{flex:1 1 160px;min-width:0;border:2px solid var(--linea);border-radius:12px;padding:12px;font-size:17px}.dr select{border:2px solid var(--linea);border-radius:12px;padding:12px;font-size:17px;background:#fff}.dr .btn{padding:12px 22px;border:0;cursor:pointer}#dres{margin-top:12px;font-size:16px}#dres .ok{color:#0a7a3d;font-weight:800}#dres .no{color:#b42318;font-weight:800}#dres table{border-collapse:collapse;margin-top:8px;width:100%;max-width:420px}#dres td{padding:5px 0;border-bottom:1px solid var(--linea)}#dres td:last-child{text-align:right;font-weight:700}#dres small{display:block;color:var(--suave);margin-top:8px}</style>
+<script>
+(function(){
+var USD={com:10.46,net:11.86,org:8.5,online:4.99,site:4.99,store:4.99,app:8.2,dev:8.2,info:21.2,biz:18.2,xyz:12.3,pro:21.2},INCL=200,TC=18.5;
+fetch('https://open.er-api.com/v6/latest/USD').then(function(r){return r.json()}).then(function(j){if(j&&j.rates&&j.rates.MXN)TC=j.rates.MXN}).catch(function(){});
+var m=function(n){return '$'+Math.round(n).toLocaleString('es-MX')+' MXN'};
+document.getElementById('db').onclick=async function(){
+ var n=document.getElementById('dn').value.trim().toLowerCase().replace(/^https?:\/\//,'').replace(/^www\./,'').replace(/\..*$/,'').replace(/[^a-z0-9-]/g,'').replace(/^-+|-+$/g,'');
+ var t=document.getElementById('dt').value,o=document.getElementById('dres');
+ if(n.length<2){o.innerHTML='Escribe el nombre que quieres (mínimo 2 letras o números).';return}
+ var d=n+'.'+t;o.textContent='Revisando '+d+'…';
+ var est='?';
+ try{var r=await fetch('https://rdap.org/domain/'+encodeURIComponent(d));est=r.status==404?'libre':(r.ok?'ocupado':'?')}catch(e){}
+ var c=USD[t]*TC,ex=Math.max(0,c-INCL);
+ var h=est=='libre'?'<span class="ok">✔ '+d+' parece disponible</span>':est=='ocupado'?'<span class="no">✖ '+d+' ya está registrado. Prueba otro nombre o terminación.</span>':'<span class="no">No pude verificar '+d+' en este momento. Inténtalo de nuevo.</span>';
+ if(est!='ocupado')h+='<table><tr><td>Costo aproximado del primer año</td><td>'+m(c)+'</td></tr><tr><td>Incluido en tu paquete</td><td>− '+m(INCL)+'</td></tr><tr><td>Excedente que pagarías</td><td>'+(ex>0?m(ex):'$0 MXN')+'</td></tr></table>';
+ h+='<small>Costo de referencia en Cloudflare ('+(USD[t]).toFixed(2)+' USD al año, tipo de cambio aproximado). El precio y la disponibilidad finales son los que confirme Cloudflare al registrarlo.</small>';
+ o.innerHTML=h};
+})();
+</script></section>
+
 <section class="sec faq"><h2>Preguntas frecuentes</h2>
 <details><summary>¿Qué incluye la configuración estándar?</summary><p>Una página con las secciones de arriba, en español, con tu información y tu agenda. Incluye ajustes razonables después de la primera entrega.</p></details>
 <details><summary>¿Qué necesito para empezar?</summary><p>Una cuenta de Google y una carpeta en tu Drive con tu información. Te enviamos la lista de lo que debe llevar.</p></details>
-<details><summary>¿El dominio tiene costo?</summary><p>El primer año va incluido, hasta un máximo de $200 MXN. Cualquier excedente y las renovaciones de los años siguientes corren por tu cuenta.</p></details>
+<details><summary>¿El dominio tiene costo?</summary><p>El primer año va incluido, hasta un máximo de $200 MXN. Puedes revisar la disponibilidad y el excedente en la sección “Revisa tu dominio”. Cualquier excedente y las renovaciones de los años siguientes corren por tu cuenta.</p></details>
 <details><summary>¿Hasta cuándo dura la promoción?</summary><p>Hasta el 27 de enero. El valor regular del paquete es de $4,900.</p></details>
 <details><summary>¿Cómo se conecta con Vida Global?</summary><p>Tus citas, clientes y movimientos del negocio se organizan en Vida Global junto con tus finanzas y tu vida personal. Tus datos se guardan en tu propio Google Drive.</p></details>
 </section>
