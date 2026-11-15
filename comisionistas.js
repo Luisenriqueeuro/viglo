@@ -42,4 +42,8 @@
       err(mo === "existe" ? "com_e_existe" : mo === "telenuso" ? "com_e_telenuso" : mo === "limite" ? "com_e_limite" : mo === "nombre" ? "com_e_nom" : mo === "telefono" ? "com_e_cel" : mo === "correo" ? "com_e_mail" : "com_e_red");
     }).catch(function () { b.disabled = false; err("com_e_red"); });
   });
+  /* Liga directa de promoción: vigloapp.com/#comisionistas abre el registro */
+  if (/comisionista/i.test(location.hash) || /[?&]comisionista/i.test(location.search)) {
+    tab("new"); if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+  }
 })();
