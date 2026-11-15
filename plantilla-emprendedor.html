@@ -1,0 +1,59 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><title>Plantilla de página – Plan Emprendedor ViGlo</title>
+<style>
+:root{--c1:#0b308f;--c2:#2563eb;--ac:#f6b33b;--tx:#14213d;--su:#5b6b8c;--li:#e1e8f7}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--tx);background:#fff;line-height:1.5}
+.w{max-width:980px;margin:0 auto;padding:0 20px}a{color:var(--c2)}
+nav{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--li);z-index:5}nav .w{display:flex;align-items:center;gap:16px;height:56px}nav b{color:var(--c1);font-size:18px}nav a{text-decoration:none;font-weight:600;font-size:14.5px;color:var(--c1)}nav .sp{margin-left:auto}
+.btn{display:inline-block;background:var(--ac);color:var(--tx);font-weight:800;text-decoration:none;border-radius:40px;padding:13px 26px}
+header.h{background:linear-gradient(120deg,var(--c1),var(--c2));color:#fff;padding:52px 0}
+header.h .w{display:flex;align-items:center;gap:34px;flex-wrap:wrap}.av{width:150px;height:150px;border-radius:75px;background:var(--ac) center/cover;display:flex;align-items:center;justify-content:center;font-size:70px;flex:none}
+header.h h1{margin:0;font-size:clamp(30px,6vw,46px)}header.h p{margin:6px 0 16px;font-size:19px;opacity:.95}
+section{padding:40px 0 6px}h2{color:var(--c1);margin:0 0 14px;font-size:28px}
+.gr{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.card{border:2px solid var(--li);border-radius:16px;padding:18px;text-align:center}.card h3{margin:0 0 4px;font-size:18px}.card .p{color:var(--c2);font-weight:800;font-size:28px}.card p{margin:4px 0 0;color:var(--su);font-size:15px}
+.gal{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gal div{height:150px;border-radius:14px;background:#eaf0fc center/cover;display:flex;align-items:center;justify-content:center;font-size:54px}
+.tes{background:#f3f6fc;border-radius:16px;padding:18px}.tes p{margin:0 0 6px;font-style:italic}.tes small{color:var(--su)}
+.ag{border:2px solid var(--li);border-radius:16px;overflow:hidden}.ag iframe{display:block;width:100%;height:640px;border:0}.ag .ph{padding:34px 20px;text-align:center;color:var(--su);background:#f8faff}
+footer{margin-top:40px;background:var(--c1);color:#dbe6ff;text-align:center;padding:26px 20px;font-size:14px}footer a{color:#fff}
+.wa{position:fixed;right:18px;bottom:18px;background:#25d366;color:#fff;border-radius:50px;padding:14px 20px;font-weight:800;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+</style></head><body>
+<!-- ===== DATOS DEL CLIENTE: es lo ÚNICO que se edita por cliente ===== -->
+<script>
+const CLIENTE={
+  nombre:"Ana López", profesion:"Psicóloga", frase:"Atención presencial y en línea para adultos y parejas.",
+  colores:{c1:"#0b308f",c2:"#2563eb",ac:"#f6b33b"},
+  foto:"", emoji:"👩‍⚕️",
+  sobre:"Psicóloga con más de 10 años de experiencia. Te acompaño con un trato cercano y profesional para que avances a tu ritmo.",
+  servicios:[{n:"Terapia individual",p:"$700",d:"Sesión de 50 minutos"},{n:"Terapia de pareja",p:"$900",d:"Sesión de 60 minutos"},{n:"Orientación",p:"$500",d:"Primera consulta"}],
+  galeria:["🪴","🛋️","📚","☕"],
+  testimonios:[{t:"Me sentí escuchada desde la primera sesión.",a:"Paciente"},{t:"Muy profesional y puntual. La recomiendo.",a:"Paciente"}],
+  agendaUrl:"",   // liga de la página de reservas de Google Calendar del cliente
+  whatsapp:"5215500000000", correo:"cliente@correo.com", ubicacion:"Ciudad de México", redes:[]
+};
+</script>
+<nav><div class="w"><b id="nb"></b><a class="sp" href="#servicios">Servicios</a><a href="#sobre">Sobre mí</a><a href="#agenda">Agenda</a><a href="#contacto">Contacto</a></div></nav>
+<header class="h"><div class="w"><div class="av" id="av"></div><div><h1 id="hn"></h1><p id="hp"></p><a class="btn" href="#agenda">Agendar cita</a></div></div></header>
+<div class="w">
+<section id="servicios"><h2>Servicios y precios</h2><div class="gr" id="sv"></div></section>
+<section id="sobre"><h2>Sobre mí</h2><p id="so" style="font-size:18px;max-width:720px"></p></section>
+<section id="galeria"><h2>Galería</h2><div class="gal" id="ga"></div></section>
+<section id="testimonios"><h2>Testimonios</h2><div class="gr" id="te"></div></section>
+<section id="agenda"><h2>Agenda tu cita</h2><div class="ag" id="ag"></div></section>
+<section id="contacto"><h2>Contacto</h2><p id="co" style="font-size:18px"></p></section>
+</div>
+<footer><span id="ft"></span><br>Página creada con el Plan Emprendedor de <a href="https://vigloapp.com/emprendedores.html">ViGlo</a> · <a href="#" onclick="alert('Aviso de privacidad: usamos tus datos solo para atender tu cita.');return false">Aviso de privacidad</a></footer>
+<a class="wa" id="wa" href="#">💬 WhatsApp</a>
+<script>
+const C=CLIENTE,$=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const r=document.documentElement.style;r.setProperty('--c1',C.colores.c1);r.setProperty('--c2',C.colores.c2);r.setProperty('--ac',C.colores.ac);
+document.title=C.nombre+" – "+C.profesion;$('nb').textContent=C.nombre;$('hn').textContent=C.nombre;$('hp').textContent=C.profesion+" · "+C.frase;
+if(C.foto){$('av').style.backgroundImage='url('+C.foto+')'}else{$('av').textContent=C.emoji}
+$('sv').innerHTML=C.servicios.map(s=>`<div class="card"><h3>${esc(s.n)}</h3><div class="p">${esc(s.p)}</div><p>${esc(s.d||'')}</p></div>`).join('');
+$('so').textContent=C.sobre;
+$('ga').innerHTML=C.galeria.map(g=>/^(https?:|[\w\/.-]+\.(jpg|jpeg|png|webp))/i.test(g)?`<div style="background-image:url('${esc(g)}')"></div>`:`<div>${esc(g)}</div>`).join('');
+$('te').innerHTML=C.testimonios.map(t=>`<div class="tes"><p>“${esc(t.t)}”</p><small>— ${esc(t.a)}</small></div>`).join('');
+$('ag').innerHTML=C.agendaUrl?`<iframe src="${esc(C.agendaUrl)}" loading="lazy" title="Agenda"></iframe>`:`<div class="ph">📅 Aquí aparece tu agenda de Google Calendar con tus horarios disponibles.<br><small>(Se activa al conectar tu página de reservas.)</small></div>`;
+const wa='https://wa.me/'+C.whatsapp.replace(/\D/g,'');
+$('co').innerHTML=`📍 ${esc(C.ubicacion)}<br>💬 <a href="${wa}">WhatsApp</a><br>✉️ <a href="mailto:${esc(C.correo)}">${esc(C.correo)}</a>`+(C.redes.length?'<br>'+C.redes.map(x=>`<a href="${esc(x.u)}">${esc(x.n)}</a>`).join(' · '):'');
+$('wa').href=wa;$('ft').textContent='© '+new Date().getFullYear()+' '+C.nombre;
+</script></body></html>
