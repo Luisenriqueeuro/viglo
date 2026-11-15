@@ -1,5 +1,5 @@
 // Service worker de Vida Global: guarda solo el "cascarón". La app real siempre viene de Apps Script.
-const V = 'vg-pwa-v10';
+const V = 'vg-pwa-v11';
 const SHELL = ['./', 'index.html', 'android.html', 'iphone.html', 'manuales.html', 'style.css', 'app.js', 'comisionistas.js', 'guia-comisionista.html', 'i18n.js', 'config.js', 'manifest.json', 'icon-192.png', 'icon-512.png', 'img/logo-horizontal.webp'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => c.addAll(SHELL)).catch(() => {})); self.skipWaiting(); });
 self.addEventListener('activate', e => {
@@ -8,6 +8,11 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const r = e.request, u = new URL(r.url);
   if (r.method !== 'GET' || u.origin !== location.origin) return;
+  if (r.mode === 'navigate' && u.searchParams.get('app') === '1') {
+    // Arranque desde el ícono: responde al instante con lo guardado y actualiza en segundo plano.
+    e.respondWith(caches.match('index.html').then(m => { const n = fetch(r).then(res => { if (res.ok) { const cp = res.clone(); caches.open(V).then(c => c.put('index.html', cp)); } return res; }).catch(() => m); return m || n; }));
+    return;
+  }
   const fresco = r.mode === 'navigate' || /\.(html|js|css|json)$/.test(u.pathname);
   if (fresco) {
     // Primero la red (así un cambio llega a todos); sin red, lo guardado.
