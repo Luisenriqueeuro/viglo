@@ -33,7 +33,7 @@ footer{color:#c8d7ff;text-align:center;font-size:13.5px;margin-top:10px}footer a
 <h1>Crea tu cuenta</h1><p class="sub">Paso 1 de 2 · Prueba gratis 21 días</p>
 <label class="f"><span>Nombre y apellido</span><input id="nom" type="text" autocomplete="name" maxlength="80"></label>
 <label class="f"><span>Correo de tu cuenta de Google</span><input id="cor" type="email" autocomplete="email" inputmode="email" maxlength="120" placeholder="tucorreo@gmail.com"></label>
-<label class="f"><span>Teléfono a 10 dígitos</span><input id="tel" type="tel" autocomplete="tel-national" inputmode="numeric" maxlength="14" placeholder="55 1234 5678"></label>
+<label class="f"><span>Teléfono (clave de país + 10 dígitos)</span><input id="tel" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" value="+52 " placeholder="+52 55 1234 5678"></label>
 <div class="demo" id="demo">🧪 Modo de prueba: podrás recorrer la app con datos de ejemplo y no se guardará nada.</div>
 <p class="msg" id="m1" role="alert"></p>
 <button class="btn" type="submit">Continuar</button>
@@ -54,20 +54,35 @@ footer{color:#c8d7ff;text-align:center;font-size:13.5px;margin-top:10px}footer a
 var $=function(i){return document.getElementById(i)};
 var f1=$('f1'),f2=$('f2'),datos={};
 function dig(t){return String(t||'').replace(/\D/g,'')}
-$('tel').addEventListener('input',function(){$('demo').style.display=dig(this.value).slice(-10)==='2222222222'?'block':'none'});
+$('tel').addEventListener('focus',function(){var t=this;setTimeout(function(){var l=t.value.length;try{t.setSelectionRange(l,l)}catch(e){}},0)});
+$('tel').addEventListener('input',function(){$('demo').style.display=parseTel(this.value).nat.slice(-10)==='2222222222'?'block':'none'});
+function parseTel(v){v=String(v||'').trim();var cc='',nat='',m=v.match(/^\+\s*(\d{1,3})[\s\-\.]+(.+)$/);
+ if(m){cc=m[1];nat=dig(m[2])}else{var d=dig(v);if(d.length>10){cc=d.slice(0,d.length-10);nat=d.slice(-10)}else{nat=d}}
+ if(!cc)cc='52';return {cc:cc,nat:nat}}
+var EN={lang:0,tit:'Select the modules you use most often',sub:'Step 2 of 2 · All start turned off. Tap the ones you would use most.',go:'Create my account and open Vida Global',back:'Back',nota:'The ones you do not choose are kept at the bottom, under “Modules I don’t use”. You can change them anytime from Settings.',
+ g:['Payments','My day','Health & wellness','Family & home','Security','More'],
+ m:{gastos:['Expenses','Track what you spend; snap a photo of the receipt and AI fills it in.'],pendientes:['Pending','What you owe and are owed, with reminders.'],tarjetas:['Cards','Balances and movements; match with your bank using screenshots.'],planear:['Budget & goals','Budgets and savings goals.'],tareas:['Tasks','To-do list with reminders.'],agenda:['Calendar','Appointments and events, with alarms in your Calendar.'],contactos:['Contacts','Business cards with photo: AI captures the data.'],compras:['Shopping list','Build your list from a photo or text.'],resumen:['Weekly summary','Your week at a glance.'],cajon:['Health drawer','Medical studies and documents in one place.'],analisis:['Lab results','Upload your lab results and AI explains them.'],tension:['Blood pressure','Blood pressure log with chart.'],diabetes:['Diabetes control','Glucose log with chart.'],meds:['Medications','Medication schedules; reads the prescription from a photo.'],salud:['Family health','Your family’s health in one place.'],comida:['Nutrition','Log meals with a photo.'],bienestar:['Wellness','Daily habits and well-being.'],ejercicio:['Activity & sports','Track your physical activity.'],mant:['Home & car','Home and car maintenance, with receipts.'],archivos:['My files','Store and find your documents.'],venc:['Expirations','Due dates: insurance, licenses, warranties.'],emer:['Emergency','Key information for an emergency.'],caja:['Safe','Passwords and private data with a PIN.'],reportes:['Reports','Reports on your finances and more.']}};
+function ponIngles(){EN.lang=1;document.documentElement.lang='en';document.title='Create your account – ViGlo Vida Global';
+ var h=f2.querySelector('h1');h.textContent=EN.tit;f2.querySelector('.sub').textContent=EN.sub;
+ [].forEach.call(f2.querySelectorAll('.gt'),function(e,i){if(EN.g[i])e.textContent=EN.g[i]});
+ [].forEach.call(f2.querySelectorAll('.c'),function(l){var k=l.querySelector('input').value,t=EN.m[k];if(t){l.querySelector('b').textContent=t[0];l.querySelector('small').textContent=t[1]}});
+ f2.querySelector('.nota').textContent=EN.nota;$('go').textContent=EN.go;$('atras').textContent=EN.back}
 f1.addEventListener('submit',function(e){e.preventDefault();
- var n=$('nom').value.replace(/\s+/g,' ').trim(),c=$('cor').value.trim(),t=dig($('tel').value).slice(-10),demo=t==='2222222222';
+ var n=$('nom').value.replace(/\s+/g,' ').trim(),c=$('cor').value.trim(),tt=parseTel($('tel').value),t=tt.nat,demo=t.slice(-10)==='2222222222';
  if(!demo){
   if(n.length<5||n.split(' ').length<2){$('m1').textContent='Escribe tu nombre y apellido.';return}
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c)){$('m1').textContent='Escribe un correo válido.';return}
-  if(t.length!==10){$('m1').textContent='El teléfono debe tener 10 dígitos.';return}
+  if(tt.cc==='52'){if(t.length!==10){$('m1').textContent='El teléfono debe tener 10 dígitos después del +52.';return}}
+  else if(t.length<7||t.length>10){$('m1').textContent='Escribe tu teléfono de 7 a 10 dígitos después de la clave de país.';return}
  }
- $('m1').textContent='';datos={n:n,c:c,t:t};f1.hidden=true;f2.hidden=false;window.scrollTo(0,0)});
+ $('m1').textContent='';datos={n:n,c:c,t:demo?'2222222222':tt.cc+t,l:(tt.cc!=='52'&&!demo)?'en':'es'};
+ if(datos.l==='en')ponIngles();
+ f1.hidden=true;f2.hidden=false;window.scrollTo(0,0)});
 $('atras').addEventListener('click',function(){f2.hidden=true;f1.hidden=false;window.scrollTo(0,0)});
 f2.addEventListener('submit',function(e){e.preventDefault();
  var m=[].slice.call(document.querySelectorAll('#f2 .c input:checked')).map(function(x){return x.value}).join(',');
- var base=(window.VG_CONFIG&&VG_CONFIG.APP_URL)||'';if(!base){alert('Falta la liga de la app.');return}
- var q='?n='+encodeURIComponent(datos.n||'')+'&c='+encodeURIComponent(datos.c||'')+'&t='+encodeURIComponent(datos.t||'')+'&m='+encodeURIComponent(m);
+ var base=(window.VG_CONFIG&&VG_CONFIG.APP_URL)||'';if(!base){alert(EN.lang?'The app link is missing.':'Falta la liga de la app.');return}
+ var q='?n='+encodeURIComponent(datos.n||'')+'&c='+encodeURIComponent(datos.c||'')+'&t='+encodeURIComponent(datos.t||'')+'&m='+encodeURIComponent(m)+'&l='+encodeURIComponent(datos.l||'es');
  location.href=base+q});
 })();
 </script></body></html>
