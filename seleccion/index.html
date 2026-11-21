@@ -76,7 +76,7 @@ f1.addEventListener('submit',function(e){e.preventDefault();
   if(tt.cc==='52'){if(t.length!==10){$('m1').textContent='El teléfono debe tener 10 dígitos después del +52.';return}}
   else if(t.length<7||t.length>10){$('m1').textContent='Escribe tu teléfono de 7 a 10 dígitos después de la clave de país.';return}
  }
- $('m1').textContent='';datos={n:n,c:c,t:demo?'2222222222':tt.cc+t,l:(tt.cc!=='52'&&!demo)?'en':'es'};
+ $('m1').textContent='';datos={n:n,c:c,t:demo?'2222222222':tt.cc+t,l:tt.cc!=='52'?'en':'es'};
  if(datos.l==='en')ponIngles();
  f1.hidden=true;f2.hidden=false;window.scrollTo(0,0)});
 $('atras').addEventListener('click',function(){f2.hidden=true;f1.hidden=false;window.scrollTo(0,0)});
