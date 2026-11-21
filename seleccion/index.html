@@ -56,7 +56,7 @@ var f1=$('f1'),f2=$('f2'),datos={};
 function dig(t){return String(t||'').replace(/\D/g,'')}
 $('tel').addEventListener('focus',function(){var t=this;setTimeout(function(){var l=t.value.length;try{t.setSelectionRange(l,l)}catch(e){}},0)});
 $('tel').addEventListener('input',function(){$('demo').style.display=parseTel(this.value).nat.slice(-10)==='2222222222'?'block':'none'});
-function parseTel(v){v=String(v||'').trim();var cc='',nat='',m=v.match(/^\+\s*(\d{1,3})[\s\-\.]+(.+)$/);
+function parseTel(v){v=String(v||'').trim();if(v.lastIndexOf('+')>0)v=v.slice(v.lastIndexOf('+'));var cc='',nat='',m=v.match(/^\+\s*(\d{1,3})[\s\-\.]+(.+)$/);
  if(m){cc=m[1];nat=dig(m[2])}else{var d=dig(v);if(d.length>10){cc=d.slice(0,d.length-10);nat=d.slice(-10)}else{nat=d}}
  if(!cc)cc='52';return {cc:cc,nat:nat}}
 var EN={lang:0,tit:'Select the modules you use most often',sub:'Step 2 of 2 · All start turned off. Tap the ones you would use most.',go:'Create my account and open Vida Global',back:'Back',nota:'The ones you do not choose are kept at the bottom, under “Modules I don’t use”. You can change them anytime from Settings.',
@@ -69,9 +69,10 @@ function ponIngles(){EN.lang=1;document.documentElement.lang='en';document.title
  f2.querySelector('.nota').textContent=EN.nota;$('go').textContent=EN.go;$('atras').textContent=EN.back}
 f1.addEventListener('submit',function(e){e.preventDefault();
  var n=$('nom').value.replace(/\s+/g,' ').trim(),c=$('cor').value.trim(),tt=parseTel($('tel').value),t=tt.nat,demo=t.slice(-10)==='2222222222';
+ if(n.length<2){$('m1').textContent='Escribe tu nombre para continuar.';return}
+ if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c)){$('m1').textContent='Escribe tu correo para continuar.';return}
  if(!demo){
   if(n.length<5||n.split(' ').length<2){$('m1').textContent='Escribe tu nombre y apellido.';return}
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c)){$('m1').textContent='Escribe un correo válido.';return}
   if(tt.cc==='52'){if(t.length!==10){$('m1').textContent='El teléfono debe tener 10 dígitos después del +52.';return}}
   else if(t.length<7||t.length>10){$('m1').textContent='Escribe tu teléfono de 7 a 10 dígitos después de la clave de país.';return}
  }
