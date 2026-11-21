@@ -1,0 +1,73 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b308f"><link rel="icon" href="../icon-192.png"><link rel="apple-touch-icon" href="../apple-touch-icon.png"><link rel="manifest" href="../manifest.json"><title>Crea tu cuenta – ViGlo Vida Global</title><meta name="description" content="Crea tu cuenta de Vida Global y elige los módulos que más usas.">
+<style>
+:root{--azul:#0b308f;--azul2:#2563eb;--cielo:#21b5e5;--oro:#f6b33b;--texto:#14213d;--suave:#5b6b8c;--ok:#1fa971}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;font-family:"Segoe UI",Roboto,Arial,Helvetica,sans-serif;color:var(--texto);background:linear-gradient(160deg,#0a2d86,#0d3699 55%,#0b2f8c) fixed;line-height:1.5}
+.wm{position:fixed;inset:0;z-index:0;pointer-events:none;display:flex;align-items:center;justify-content:center;opacity:.07}.wm img{width:min(90vw,520px);height:auto;filter:brightness(0) invert(1)}
+.wrap{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:18px 16px 40px}
+.logo{display:block;margin:6px auto 4px;width:min(86%,430px);height:auto;background:#fff;border-radius:18px;padding:10px 14px}
+.lema{text-align:center;color:#dbe7ff;margin:10px 0 18px;font-weight:600}
+.card{background:#fff;border-radius:22px;padding:20px 18px;box-shadow:0 10px 30px rgba(0,0,0,.25);margin-bottom:16px}
+h1{font-size:23px;color:var(--azul);margin:0 0 4px}.sub{color:var(--suave);margin:0 0 14px}
+label.f{display:block;margin:12px 0 0}label.f span{display:block;font-weight:700;font-size:14.5px;margin-bottom:4px}
+input[type=text],input[type=email],input[type=tel]{width:100%;font-size:17px;padding:13px 14px;border:2px solid #dbe5fb;border-radius:14px;font-family:inherit}
+input:focus{outline:none;border-color:var(--azul2)}
+.btn{display:block;width:100%;margin-top:18px;border:0;border-radius:16px;padding:16px;font-size:18px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--azul),var(--azul2));cursor:pointer;font-family:inherit}
+.btn.sec{background:#fff;color:var(--azul);border:2px solid #dbe5fb;margin-top:10px}
+.msg{color:#b3261e;min-height:22px;margin:10px 0 0;font-weight:600}
+.demo{display:none;margin-top:10px;background:#efeaff;color:#4b2fc7;border-radius:12px;padding:9px 12px;font-weight:700}
+.gt{font-size:15px;color:var(--azul);margin:16px 0 8px;text-transform:uppercase;letter-spacing:.04em}
+.g{display:flex;flex-wrap:wrap;gap:8px}
+.c{display:inline-flex;align-items:center;gap:8px;padding:10px 13px;border:2px solid #dbe5fb;border-radius:14px;cursor:pointer;min-height:46px;font-size:16px;background:#fff}
+.c small{display:block;font-weight:400;font-size:12.5px;color:var(--suave);line-height:1.3}.c b{font-weight:700}.c{align-items:flex-start;flex:1 1 100%}.c input{margin-top:2px;width:20px;height:20px;accent-color:var(--ok)}
+.c:has(input:checked){border-color:var(--ok);background:#e8f8f1}
+.nota{font-size:13.5px;color:var(--suave);margin:14px 0 0}
+footer{color:#c8d7ff;text-align:center;font-size:13.5px;margin-top:10px}footer a{color:#fff}
+[hidden]{display:none!important}
+</style></head><body>
+<div class="wm" aria-hidden="true"><img src="../img/logo-vertical.webp" alt=""></div>
+<div class="wrap">
+<img class="logo" src="../img/logo-horizontal.webp" alt="ViGlo – Vida Global. Del Hogar, al Negocio y el Mundo">
+<p class="lema">Tu vida organizada en un solo lugar</p>
+<form id="f1" class="card" autocomplete="on" novalidate>
+<h1>Crea tu cuenta</h1><p class="sub">Paso 1 de 2 · Prueba gratis 21 días</p>
+<label class="f"><span>Nombre y apellido</span><input id="nom" type="text" autocomplete="name" maxlength="80"></label>
+<label class="f"><span>Correo de tu cuenta de Google</span><input id="cor" type="email" autocomplete="email" inputmode="email" maxlength="120" placeholder="tucorreo@gmail.com"></label>
+<label class="f"><span>Teléfono a 10 dígitos</span><input id="tel" type="tel" autocomplete="tel-national" inputmode="numeric" maxlength="14" placeholder="55 1234 5678"></label>
+<div class="demo" id="demo">🧪 Modo de prueba: podrás recorrer la app con datos de ejemplo y no se guardará nada.</div>
+<p class="msg" id="m1" role="alert"></p>
+<button class="btn" type="submit">Continuar</button>
+<p class="nota">Usa el mismo correo con el que entrarás con Google. Tus datos se guardan únicamente en tu propio Google Drive.</p>
+</form>
+<form id="f2" class="card" hidden>
+<h1>Selecciona los módulos que usas con más frecuencia</h1><p class="sub">Paso 2 de 2 · Todos empiezan apagados. Toca los que más usarías.</p>
+<div class="gt">Pagos</div><div class="g"><label class="c"><input type="checkbox" value="gastos"><span><b>Gastos</b><small>Registra lo que gastas; toma foto del ticket y la IA lo llena.</small></span></label><label class="c"><input type="checkbox" value="pendientes"><span><b>Pendientes</b><small>Lo que debes pagar y cobrar, con avisos.</small></span></label><label class="c"><input type="checkbox" value="tarjetas"><span><b>Tarjetas</b><small>Saldos y movimientos; iguala con tu banco con capturas.</small></span></label><label class="c"><input type="checkbox" value="planear"><span><b>Presupuesto y metas</b><small>Presupuestos y metas de ahorro.</small></span></label></div><div class="gt">Mi día</div><div class="g"><label class="c"><input type="checkbox" value="tareas"><span><b>Tareas</b><small>Lista de pendientes con recordatorios.</small></span></label><label class="c"><input type="checkbox" value="agenda"><span><b>Agenda</b><small>Citas y eventos, con alarma en tu Calendar.</small></span></label><label class="c"><input type="checkbox" value="contactos"><span><b>Contactos</b><small>Tarjetas de presentación con foto: la IA captura los datos.</small></span></label><label class="c"><input type="checkbox" value="compras"><span><b>Lista de compras</b><small>Lista de compras desde una foto o texto.</small></span></label><label class="c"><input type="checkbox" value="resumen"><span><b>Resumen semanal</b><small>Tu semana resumida en un vistazo.</small></span></label></div><div class="gt">Salud y bienestar</div><div class="g"><label class="c"><input type="checkbox" value="cajon"><span><b>Cajón de salud</b><small>Estudios y documentos de salud en un solo lugar.</small></span></label><label class="c"><input type="checkbox" value="analisis"><span><b>Análisis clínicos</b><small>Sube tus análisis y la IA los explica.</small></span></label><label class="c"><input type="checkbox" value="tension"><span><b>Presión arterial</b><small>Registro de presión arterial con gráfica.</small></span></label><label class="c"><input type="checkbox" value="diabetes"><span><b>Control de diabetes</b><small>Registro de glucosa con gráfica.</small></span></label><label class="c"><input type="checkbox" value="meds"><span><b>Medicamentos</b><small>Horarios de medicamentos; lee la receta con foto.</small></span></label><label class="c"><input type="checkbox" value="salud"><span><b>Salud familiar</b><small>Salud de tu familia en un lugar.</small></span></label><label class="c"><input type="checkbox" value="comida"><span><b>Alimentación</b><small>Registra comidas con foto.</small></span></label><label class="c"><input type="checkbox" value="bienestar"><span><b>Bienestar</b><small>Hábitos y bienestar diario.</small></span></label><label class="c"><input type="checkbox" value="ejercicio"><span><b>Actividad y deporte</b><small>Seguimiento de tu actividad física.</small></span></label></div><div class="gt">Familia y hogar</div><div class="g"><label class="c"><input type="checkbox" value="mant"><span><b>Hogar y auto</b><small>Mantenimiento de casa y auto, con recibos.</small></span></label><label class="c"><input type="checkbox" value="archivos"><span><b>Mis archivos</b><small>Guarda y encuentra tus documentos.</small></span></label><label class="c"><input type="checkbox" value="venc"><span><b>Vencimientos</b><small>Fechas de vencimiento: seguros, licencias, garantías.</small></span></label></div><div class="gt">Seguridad</div><div class="g"><label class="c"><input type="checkbox" value="emer"><span><b>Emergencia</b><small>Datos clave para una emergencia.</small></span></label><label class="c"><input type="checkbox" value="caja"><span><b>Caja fuerte</b><small>Contraseñas y datos privados con PIN.</small></span></label></div><div class="gt">Más</div><div class="g"><label class="c"><input type="checkbox" value="reportes"><span><b>Reportes</b><small>Reportes de tus finanzas y más.</small></span></label></div>
+<p class="nota">Los que no elijas se guardan abajo, en «Casillas que no uso». Puedes cambiarlos cuando quieras desde Ajustes.</p>
+<button class="btn" type="submit" id="go">Crear mi cuenta y abrir Vida Global</button>
+<button class="btn sec" type="button" id="atras">Volver</button>
+</form>
+<footer>ViGlo · Vida Global · <a href="mailto:info@vigloapp.com">info@vigloapp.com</a></footer>
+</div>
+<script src="../config.js"></script>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var f1=$('f1'),f2=$('f2'),datos={};
+function dig(t){return String(t||'').replace(/\D/g,'')}
+$('tel').addEventListener('input',function(){$('demo').style.display=dig(this.value).slice(-10)==='2222222222'?'block':'none'});
+f1.addEventListener('submit',function(e){e.preventDefault();
+ var n=$('nom').value.replace(/\s+/g,' ').trim(),c=$('cor').value.trim(),t=dig($('tel').value).slice(-10),demo=t==='2222222222';
+ if(!demo){
+  if(n.length<5||n.split(' ').length<2){$('m1').textContent='Escribe tu nombre y apellido.';return}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c)){$('m1').textContent='Escribe un correo válido.';return}
+  if(t.length!==10){$('m1').textContent='El teléfono debe tener 10 dígitos.';return}
+ }
+ $('m1').textContent='';datos={n:n,c:c,t:t};f1.hidden=true;f2.hidden=false;window.scrollTo(0,0)});
+$('atras').addEventListener('click',function(){f2.hidden=true;f1.hidden=false;window.scrollTo(0,0)});
+f2.addEventListener('submit',function(e){e.preventDefault();
+ var m=[].slice.call(document.querySelectorAll('#f2 .c input:checked')).map(function(x){return x.value}).join(',');
+ var base=(window.VG_CONFIG&&VG_CONFIG.APP_URL)||'';if(!base){alert('Falta la liga de la app.');return}
+ var q='?n='+encodeURIComponent(datos.n||'')+'&c='+encodeURIComponent(datos.c||'')+'&t='+encodeURIComponent(datos.t||'')+'&m='+encodeURIComponent(m);
+ location.href=base+q});
+})();
+</script></body></html>
